@@ -183,7 +183,7 @@ export default function Home({ defaultData }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=afcf51e89eaa450ba18115940221706&q=Qarshi&aqi=no`
+    `http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=Tashkent&aqi=no`
   );
 
   const data = await res.json();
