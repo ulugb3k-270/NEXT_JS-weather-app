@@ -1,10 +1,4 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,600;1,500&display=swap");
 
 a {
   color: inherit;
@@ -13,4 +7,217 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Rubic, sans-serif;
+}
+
+main {
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-bg-img {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -10;
+}
+
+/* MAIN LEFT */
+.main__left {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  padding: 5rem;
+}
+
+.weather-info-box {
+  position: absolute;
+  bottom: 85px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather-info-temp {
+  font-size: 90px;
+  font-weight: 500;
+}
+
+.weather-info-location > p {
+  font-size: 50px;
+}
+
+.weather-info-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==== ASIDE ==== */
+
+aside {
+  width: 30%;
+  background: rgba(110, 110, 110, 0.25);
+  box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1;
+  padding: 2em;
+  position: relative;
+}
+
+.aside-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.aside-form > div {
+  flex: 1;
+}
+
+.aside-form > div > input {
+  outline: none;
+  background: unset;
+  border: none;
+  border-bottom: 1px solid #adadad;
+  padding: 10px 0;
+  color: white;
+  width: 90%;
+}
+
+.aside-form > div > p {
+  font-size: 11px;
+  color: red;
+  margin-top: 5px;
+}
+
+.aside-form-btn.day {
+  background: #ff7617;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.aside-form-btn.night {
+  background: #0e192b;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.aside-form > .aside-form-btn.day:active {
+  background: #df6813;
+}
+.aside-form > .aside-form-btn.night:active {
+  background: #060c14;
+}
+
+.aside-form > button > svg {
+  width: 25px !important;
+  height: 25px !important;
+  color: white;
+}
+
+.aside-bookmark {
+  padding: 3rem 0 0 0;
+  border-bottom: 1px solid #adadad;
+}
+
+.aside-bookmark p {
+  margin-bottom: 3rem;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.aside-weather-details {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.aside-weather-details > p {
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+}
+
+.aside-weather-details > p > span {
+  flex: 1;
+}
+
+/* ====== MEDIA ======= */
+
+@media (max-width: 1000px) {
+  main {
+    position: relative;
+  }
+
+  aside {
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 100%;
+    height: 346px;
+    overflow-y: scroll;
+  }
+
+  .aside-bookmark {
+    display: none;
+  }
+
+  .main__left {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .weather-info-box {
+    top: -250px;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  aside{
+    padding: 1em;
+    min-height: 292px;
+    bottom: 0;
+  }
+  .weather-info-box > h2{
+    font-size: 60px;
+  }
+
+  .weather-info-location > p{
+    font-size: 30px;
+  }
+
+  .weather-info-box{
+    gap: 37px;
+  }
+
+  .aside-weather-details{
+    row-gap: 2rem;
+  }
+
+  .aside-weather-details > p{
+    font-size: 13px;
+  }
+
+  .aside-form-btn{
+    padding: 12px !important;
+  }
 }
