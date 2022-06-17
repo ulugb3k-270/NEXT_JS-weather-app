@@ -19,7 +19,7 @@ export default function Home({ defaultData }) {
 
     const API_KEY = "afcf51e89eaa450ba18115940221706";
     const res = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=afcf51e89eaa450ba18115940221706&q=${city}&aqi=no`
     );
     const data = await res.json();
 
